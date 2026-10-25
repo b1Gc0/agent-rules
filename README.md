@@ -13,8 +13,8 @@
 
 | 文件 | 内容 |
 |---|---|
-| [research-coding.md](research-coding.md) | 只含"科研代码规范"一节，约 120 行，**推荐** |
-| [AGENTS.full.md](AGENTS.full.md) | 作者自己完整的 `~/.codex/AGENTS.md`，含个人的工作流设定，仅供参考 |
+| [research-coding-writing.md](research-coding.md) | for claude code |
+| [AGENTS.full.md](AGENTS.full.md) | for codex，含个人的工作流设定 |
 
 ## 使用方法
 
