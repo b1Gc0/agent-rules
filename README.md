@@ -13,7 +13,7 @@
 
 | 文件 | 内容 |
 |---|---|
-| [research-coding-writing.md](research-coding.md) | for claude code |
+| [research-coding-writing.md](./research-coding-writing.md) | for claude code |
 | [AGENTS.full.md](AGENTS.full.md) | for codex，含个人的工作流设定 |
 
 ## 使用方法
