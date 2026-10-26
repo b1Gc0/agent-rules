@@ -1,0 +1,3 @@
+已写入 [discussion.md](discussion.md)，单段约 204 词。
+
+已区分场增强机制、侧壁倾角的间接证据及单器件、单偏振的结论边界。前人效率数据保留了 `[reference needed]`，需补入对应文献。

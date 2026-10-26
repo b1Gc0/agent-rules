@@ -1,0 +1,4 @@
+# Generated MATLAB outputs are intentionally not part of the small test archive.
+examples/ab-test/**/*.mat
+examples/ab-test/**/fresnel*.png
+__pycache__/
