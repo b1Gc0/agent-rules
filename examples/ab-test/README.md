@@ -25,7 +25,7 @@
 - 每个条件、每个任务重复两次，使用相同任务内容。写作 prompt 的粘贴存在空行差异，并非严格字节相同。
 - [before.full.md](rules/before.full.md) 来自安装前的全局规则备份。
 - [after.reconstructed.full.md](rules/after.reconstructed.full.md) 根据保留的最终草稿，撤回测试后新增的三条规则重建；**不是测试当时保存的逐字快照**。本地会话的指令记录部分出现编码乱码，不将其发布为可靠快照。
-- 当前仓库根目录的规则又做过三项调整：MATLAB 直接构造 cyclic 色表、不检查写死的参数、未要求时不自行添加引用。这三项不属于已完成 A/B 测试的结论。
+- 测试之后，仓库中的现行规则先做过三项调整（MATLAB 直接构造 cyclic 色表、不检查写死的参数、未要求时不自行添加引用），2026-10-26 又拆分为 `claude/`、`codex/` 两套文件并新增了条款。这些改动都不属于已完成 A/B 测试的结论。
 - Claude Code、Python 和 Mathematica 没有进行这轮 A/B 测试。
 
 ## 输入数据不是实测结果

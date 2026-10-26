@@ -1,29 +1,38 @@
-# agent-rules: 科研代码与写作全局规则For Codex/Claude Code
+# agent-rules：科研代码与写作全局规则 For Codex/Claude Code
 
 主要解决问题：大模型的“防御性编程”&“防御性写作”
 
-``` 
+```
 - 防御性编程：到处加 try/catch、静默兜底、对自己写死的常数做检查。规则要求出错直接报错，不吞错误，不用默认值掩盖问题。
 - 防御性写作：论文里堆 may、could，写 "cannot establish" 这类提前辩解的句子。规则要求去掉多余的辩解，保留近似条件、适用范围、单器件等必要的限定。
 ```
 
-同时规定了科研代码脚本的默认风格：写成平铺的脚本、不导出文件只弹图窗、变量名对应公式符号、按数据性质选色表、注释用英文、脚本默认不保存数据、运行时间超过 5 分钟先问、MATLAB 脚本开头加 `clear; close all; clc;`等等，覆盖 Python、MATLAB、Mathematica三种语言。
+同时规定了科研代码脚本的默认风格：写成平铺的脚本、不导出文件只弹图窗、变量名对应公式符号、按数据性质选色表、注释用英文、脚本默认不保存数据、运行时间超过 5 分钟先问、MATLAB 脚本开头加 `clear; close all; clc;` 等等，覆盖 Python、MATLAB、Mathematica 三种语言。另有一部分规定与用户的沟通方式，以及科研证据和物理分析的原则。
 
 ## 文件内容
 
-| 文件 | 内容 |
-|---|---|
-| [AGENTS.full.md](AGENTS.full.md) | for codex，含个人的工作流设定 |
-| [research-coding-writing.md](./research-coding-writing.md)  | for claude code |
+| 文件 | 内容 | 安装位置 |
+|---|---|---|
+| [claude/CLAUDE.md](claude/CLAUDE.md) | 通用协作、科研证据与物理分析 | `~/.claude/CLAUDE.md` |
+| [claude/rules/research-coding.md](claude/rules/research-coding.md) | 脚本结构、注释、单位、错误处理、绘图与运行验证 | `~/.claude/rules/research-coding.md` |
+| [claude/rules/writing-style.md](claude/rules/writing-style.md) | README、论文、报告等交付文档 | `~/.claude/rules/writing-style.md` |
+| [claude/rules/communication.md](claude/rules/communication.md) | 问答、进度与完成汇报 | `~/.claude/rules/communication.md` |
+| [codex/AGENTS.md](codex/AGENTS.md) | Codex 完整版：上面全部内容，加计划审批流程 | `~/.codex/AGENTS.md` |
+
+[en/](en/) 下是逐条对应的英文版，回复仍默认用简体中文。
 
 ## 使用方法
 
-优先采用追加方式使用文档；不要覆盖AGENTS.md或者CLAUDE.md，否则会破坏你自己已有的规则。
+不要直接覆盖已有的 `CLAUDE.md` 或 `AGENTS.md`，否则会破坏你自己已有的规则；按需合并。规则以第一人称写成（“我是光学与光子学研究人员”），开头的背景描述请换成你自己的。
 
-- **Codex**：把 [research-coding-writing.md](research-coding-writing.md) 的内容追加到 `~/.codex/AGENTS.md` 末尾；[AGENTS.full.md](AGENTS.full.md) 包含更多个人工作流设定，仅供参考。
-- **Claude Code**：将 [research-coding-writing.md](research-coding-writing.md) 复制到 `~/.claude/rules/research-coding-writing.md`。
+- **Claude Code**：把 `claude/rules/` 下需要的文件复制到 `~/.claude/rules/`；[claude/CLAUDE.md](claude/CLAUDE.md) 中需要的条目追加到 `~/.claude/CLAUDE.md`。
+- **Codex**：把 [codex/AGENTS.md](codex/AGENTS.md) 中的“科研代码”“写作风格”“与用户沟通”三节追加到 `~/.codex/AGENTS.md`（设置了 `CODEX_HOME` 时在该目录下）。“计划与审批”一节是个人工作流设定：修改文件、调试、委派前都要先给计划、等批准，按需采用。
 
 修改后新建会话，再检查规则是否加载。
+
+## 维护
+
+科研代码、写作、沟通三部分共有四份副本，改一处时四份一起改：`claude/rules/` 下的三个文件、`codex/AGENTS.md` 中对应的三节，以及 `en/` 下的英文对应文件。Codex 中这三节只调整了标题层级，正文与 Claude 的文件逐句相同。Claude 的 AskUserQuestion 澄清机制和 Codex 的计划审批流程是各自独有的，不需要同步。
 
 ## 测试归档
 
@@ -32,7 +41,7 @@
 - **代码**：before 两次都导出了 3 张 PNG 和一个约 31 MB 的 `.mat`，相位图用了 hsv；after 两次均不导出这些文件，改用 cyclic 色表，变量单位改写在注释里。
 - **写作**：措辞更直接，单器件、单偏振和间接结构证据等必要限定仍保留。词频只是文本特征，不是写作质量评分。
 
-本轮只有每组两次、每类一个任务，没有盲评，也没有测试 Claude Code。输入折射率表和 THG 情境均为人为构造，不是本仓库的实验数据；测试之后新增的三条规则尚未验证。原报告有一处叠加 hedge 的误记，词表也在事后扩大过，详见 [复核更正](examples/ab-test/reports/archive-notes.md)。
+测试的是 2026-10-25 的单文件 Codex 规则（存档在 [examples/ab-test/rules/](examples/ab-test/rules/)），当前的拆分结构和之后新增的条款没有测试。本轮只有每组两次、每类一个任务，没有盲评，也没有测试 Claude Code。输入折射率表和 THG 情境均为人为构造，不是本仓库的实验数据。原报告有一处叠加 hedge 的误记，词表也在事后扩大过，详见 [复核更正](examples/ab-test/reports/archive-notes.md)。
 
 ### 代码对比
 
