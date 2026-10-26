@@ -1,3 +1,0 @@
-# Keep archived text reproducible across Windows and Unix checkouts.
-/examples/ab-test/** text=auto eol=lf
-/examples/ab-test/**/*.png -text

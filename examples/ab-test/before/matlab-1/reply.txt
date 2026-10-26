@@ -1,7 +1,0 @@
-已编写并在 MATLAB R2025b 中运行 [fresnel_film.m](fresnel_film.m)，扫描步长为 1 nm、0.1°。
-
-三张图已保存：[反射率 R](fresnel_R.png)、[相位（rad）](fresnel_phase.png)、[ΔR](fresnel_deltaR.png)；完整数值保存在同目录 `fresnel_film_results.mat`。
-
-**CSV 仅覆盖 400–1000 nm**；1000–1100 nm 使用末两点线性外推，已在图中标记。
-
-验证通过：能量守恒最大误差为 \(1.33\times10^{-15}\)，零厚度退化到裸界面的振幅误差为 \(6.66\times10^{-16}\)。

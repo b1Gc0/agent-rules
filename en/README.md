@@ -12,4 +12,4 @@ Clause-by-clause English counterparts of the Chinese rules in the parent directo
 
 Merge these into your existing files rather than overwriting them, and replace the first-person research background with your own. For Codex, the Research Code, Writing Style, and Communication sections can be appended on their own; the Planning and Approval section is a personal workflow that requires a plan and approval before file changes, debugging, or delegation. Start a new session after installing and check that the rules are loaded.
 
-The research-code, writing, and communication rules exist in four copies (Claude and Codex, Chinese and English). Change all four together. See the [main README](../README.md) for the test archive.
+The research-code, writing, and communication rules exist in four copies (Claude and Codex, Chinese and English). Change all four together.

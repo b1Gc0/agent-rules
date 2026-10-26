@@ -1,7 +1,0 @@
-已编写并用 MATLAB 运行 [fresnel_film.m](fresnel_film.m)，扫描步长为 1 nm、0.1°。
-
-三张图已保存：[反射率 R](fresnel_R.png)、[反射相位](fresnel_phase.png)、[ΔR](fresnel_DeltaR.png)。完整计算数组保存在同目录的 `fresnel_film_results.mat`。
-
-**数据仅到 1000 nm**，1000–1100 nm 使用末两点线性外推，图中已标记。相位取膜上表面处的主值 \([-\pi,\pi]\)，单位 rad。
-
-能量守恒最大误差为 \(1.33\times10^{-15}\)；零膜厚极限和独立边界条件求解均通过验证。
